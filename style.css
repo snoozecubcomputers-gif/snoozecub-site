@@ -1,0 +1,271 @@
+/* ==========================
+   Global Styles
+   ========================== */
+body {
+    position: relative;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: orangered;
+}
+
+    body > * {
+        position: relative;
+        z-index: 1;
+    }
+
+/* ==========================
+   Headings
+   ========================== */
+h1 {
+    margin: 0;
+}
+
+main h1 {
+    max-width: 300px;
+    margin-left: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+section {
+    margin-top: 40px;
+}
+
+/* ==========================
+   About Page
+   ========================== */
+.about-title {
+    max-width: 600px;
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.about-text {
+    max-width: 600px;
+    margin-left: 30px;
+    margin-top: 30px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px black;
+    line-height: 2;
+    font-size: 18px;
+}
+
+/* ==========================
+   Sales Panel / Carousel
+   ========================== */
+.sales-panel {
+    position: fixed;
+    right: 150px;
+    top: 200px;
+    width: 250px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px black;
+    z-index: 1;
+}
+
+    .sales-panel h2 {
+        text-align: center;
+        margin-top: 0;
+    }
+
+.sales-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .sales-carousel img {
+        width: 100%;
+        max-width: 260px;
+        border-radius: 6px;
+    }
+
+.sale-btn {
+    background-color: darkblue;
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+    .sale-btn:hover:not(:disabled) {
+        background-color: #333;
+    }
+
+    .sale-btn:disabled {
+        background-color: #999;
+        cursor: not-allowed;
+    }
+
+/* ==========================
+   Header / Menu
+   ========================== */
+header {
+    background-color: darkblue;
+    color: white;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.menu {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+    .menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        background-color: darkblue;
+    }
+
+    .menu li {
+        margin: 0 20px;
+    }
+
+    .menu a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        padding: 15px 10px;
+        display: block;
+        transition: 0.3s;
+    }
+
+        .menu a:hover {
+            color: orangered;
+            background-color: #333;
+            border-radius: 5px;
+        }
+
+/* ==========================
+   Contact Page
+   ========================== */
+.contact-title {
+    text-align: center;
+    color: white;
+    font-size: 36px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.contact-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.contact-box {
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    padding: 25px;
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+    .contact-box h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: darkblue;
+    }
+
+    .contact-box form label {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    .contact-box form input,
+    .contact-box form textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    .contact-box form button {
+        margin-top: 20px;
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+        border-radius: 5px;
+        border: none;
+        background-color: darkblue;
+        color: white;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+        .contact-box form button:hover {
+            background-color: #333;
+        }
+
+/* ==========================
+   Hero / Homepage Logo
+   ========================== */
+.hero-logo-section {
+    text-align: center;
+    margin-top: 0px;
+}
+
+.hero-logo {
+    width: 600px;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+.hero-tagline {
+    color: white;
+    font-size: 18px;
+}
+
+/* ==========================
+   Footer
+   ========================== */
+footer {
+    background-color: darkblue;
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+    footer a {
+        color: orangered;
+        text-decoration: none;
+        margin: 0 5px;
+    }
+
+        footer a:hover {
+            text-decoration: underline;
+        }

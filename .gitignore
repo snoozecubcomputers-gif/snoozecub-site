@@ -1,0 +1,13 @@
+# Ignore Visual Studio files
+.vs/
+*.sln
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore node_modules if you use Node.js later
+node_modules/
+
+# Ignore other temporary files
+*.log

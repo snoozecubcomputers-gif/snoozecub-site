@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Snooze Cub Computers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="contact-page">
+
+    <header>
+       
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="about.html">ℹ️ About Us</a></li>
+                <li><a href="shop.html">🛒 Shop</a></li>
+                <li><a href="contact.html">✉️ Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="contact-title">Contact Us</h1>
+
+        <div class="contact-boxes">
+
+            <!-- Buyer Contact Form -->
+            <div class="contact-box">
+                <h2>Buyers</h2>
+                <form action="https://formspree.io/f/xqeywdkg" method="POST">
+                    <label for="buyer-name">Name:</label>
+                    <input type="text" id="buyer-name" name="name" required>
+
+                    <label for="buyer-email">Email:</label>
+                    <input type="email" id="buyer-email" name="email" required>
+
+                    <label for="buyer-message">Message:</label>
+                    <textarea id="buyer-message" name="message" rows="5" required></textarea>
+
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+
+            <!-- Donation Contact Form -->
+            <div class="contact-box">
+                <h2>Donors</h2>
+                <form action="https://formspree.io/f/xyknldyo" method="POST">
+                    <label for="donor-name">Name:</label>
+                    <input type="text" id="donor-name" name="name" required>
+
+                    <label for="donor-email">Email:</label>
+                    <input type="email" id="donor-email" name="email" required>
+
+                    <label for="donor-message">Message:</label>
+                    <textarea id="donor-message" name="message" rows="5" required></textarea>
+
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
