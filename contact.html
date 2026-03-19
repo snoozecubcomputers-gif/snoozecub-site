@@ -5,10 +5,10 @@
     <title>Contact Snooze Cub Computers</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="contact-page">
+
+<body>
 
     <header>
-       
         <nav class="menu">
             <ul>
                 <li><a href="index.html">🏠 Home</a></li>
@@ -24,43 +24,46 @@
 
         <div class="contact-boxes">
 
-            <!-- Buyer Contact Form -->
             <div class="contact-box">
                 <h2>Buyers</h2>
                 <form action="https://formspree.io/f/xqeywdkg" method="POST">
-                    <label for="buyer-name">Name:</label>
-                    <input type="text" id="buyer-name" name="name" required>
-
-                    <label for="buyer-email">Email:</label>
-                    <input type="email" id="buyer-email" name="email" required>
-
-                    <label for="buyer-message">Message:</label>
-                    <textarea id="buyer-message" name="message" rows="5" required></textarea>
-
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="message" rows="8" placeholder="Message" required></textarea>
                     <button type="submit">Send</button>
                 </form>
             </div>
 
-            <!-- Donation Contact Form -->
             <div class="contact-box">
                 <h2>Donors</h2>
                 <form action="https://formspree.io/f/xyknldyo" method="POST">
-                    <label for="donor-name">Name:</label>
-                    <input type="text" id="donor-name" name="name" required>
-
-                    <label for="donor-email">Email:</label>
-                    <input type="email" id="donor-email" name="email" required>
-
-                    <label for="donor-message">Message:</label>
-                    <textarea id="donor-message" name="message" rows="5" required></textarea>
-
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="message" rows="8" placeholder="Message" required></textarea>
                     <button type="submit">Send</button>
                 </form>
             </div>
 
         </div>
-
     </main>
+
+    <footer>
+        <div class="footer-content">
+
+            <p><strong>Snooze Cub Computers</strong></p>
+
+            <p>Glens Falls, NY</p>
+
+            <p>
+                Email: snoozecubcomputers@gmail.com
+            </p>
+
+            <p>
+                © 2026 Snooze Cub Computers. All rights reserved.
+            </p>
+
+        </div>
+    </footer>
 
 </body>
 </html>

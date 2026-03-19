@@ -1,6 +1,3 @@
-function contact() {
-    alert("Email: support@refurbtech.com");
-}
 const salesImages = [
     "images/sales/sale1.jpeg",
     "images/sales/sale2.jpeg",
@@ -14,11 +11,13 @@ const salesImages = [
 let currentSale = 0;
 
 function showSale() {
-    document.getElementById("sale-image").src = salesImages[currentSale];
+    const img = document.getElementById("sale-image");
+    if (!img) return;
 
-    // Disable buttons at ends
-    document.querySelector(".sale-btn.prev").disabled = (currentSale === 0);
-    document.querySelector(".sale-btn.next").disabled = (currentSale === salesImages.length - 1);
+    img.src = salesImages[currentSale];
+
+    document.querySelector(".prev").disabled = currentSale === 0;
+    document.querySelector(".next").disabled = currentSale === salesImages.length - 1;
 }
 
 function nextSale() {
@@ -35,5 +34,4 @@ function prevSale() {
     }
 }
 
-// Initialize on page load
 window.onload = showSale;
