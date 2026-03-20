@@ -29,8 +29,13 @@
         <div class="contact-box order-box">
             <form action="https://formspree.io/f/mkoqerlj" method="POST">
 
+                <!-- Visible to user -->
                 <label for="pc-name">PC Name:</label>
                 <input type="text" id="pc-name" name="pc-name" readonly>
+
+                <!-- Hidden fields (YOU receive these) -->
+                <input type="hidden" id="pc-id" name="pc-id">
+                <input type="hidden" id="pc-price" name="pc-price">
 
                 <label for="buyer-name">Your Name:</label>
                 <input type="text" id="buyer-name" name="name" required>
@@ -42,7 +47,8 @@
                 <input type="tel" id="buyer-phone" name="phone" required>
 
                 <label for="buyer-message">Message / Notes:</label>
-                <textarea id="buyer-message" name="message" rows="6" placeholder="Any notes or questions about pickup/delivery"></textarea>
+                <textarea id="buyer-message" name="message" rows="6"
+                          placeholder="Any notes or questions about pickup/delivery"></textarea>
 
                 <label for="payment-method">Preferred Payment:</label>
                 <select id="payment-method" name="payment-method">
@@ -61,19 +67,20 @@
         const urlParams = new URLSearchParams(window.location.search);
         const pc = urlParams.get('pc');
 
-        // Map PC IDs to human-readable names
-        const pcNames = {
-            'pc-001': 'Dell Optiplex 3070 Micro',
-            'pc-002': 'Dell Optiplex 3060 Micro',
-            'pc-003': 'Dell Optiplex 3020 SFF',
-            'pc-004': 'HP Prodesk 600 G3 SFF',
-            'pc-005': 'Dell Optiplex 3050 SFF',
-            'pc-006': 'Dell Optiplex 3050 SFF',
+        // Map PC IDs to names AND prices
+        const pcData = {
+            'pc-001': { name: 'Dell Optiplex 3070 Micro', price: '$140' },
+            'pc-002': { name: 'Dell Optiplex 3060 Micro', price: '$120' },
+            'pc-003': { name: 'Dell Optiplex 3020 SFF', price: '$60' },
+            'pc-004': { name: 'HP Prodesk 600 G3 SFF', price: '$140' },
+            'pc-005': { name: 'Dell Optiplex 3050 SFF', price: '$120' },
+            'pc-006': { name: 'Dell Optiplex 3050 SFF', price: '$100' },
         };
 
-        // Fill the readonly field with the PC name
-        if (pc && pcNames[pc]) {
-            document.getElementById('pc-name').value = pcNames[pc];
+        if (pc && pcData[pc]) {
+            document.getElementById('pc-name').value = pcData[pc].name;
+            document.getElementById('pc-id').value = pc;
+            document.getElementById('pc-price').value = pcData[pc].price;
         }
     </script>
 

@@ -52,12 +52,12 @@ header {
    ========================== */
 .hero-logo-section {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 80px;
 }
 
 .hero-logo {
     width: 100%;
-    max-width: 500px;
+    max-width: 900px;
 }
 
 .hero-tagline {
@@ -84,6 +84,7 @@ header {
 .about-title {
     margin-bottom: 60px;
     text-align: center;
+    font-size: 48px;
 }
 
 .about-text {
@@ -93,6 +94,7 @@ header {
     line-height: 1.8;
     max-width: 700px;
     width: 100%;
+    font-size: 36px;
 }
 
 /* ==========================
@@ -101,33 +103,44 @@ header {
 .sales-panel {
     flex: 1;
     background-color: white;
-    padding: 20px;
+    padding: 30px; /* ⬅ reduce from 80px */
     border-radius: 10px;
     box-shadow: 0 2px 10px black;
+    max-width: 500px;
+    width: 100%;
 }
 
     .sales-panel h2 {
         text-align: center;
+        font-size: 26px;
+        margin-bottom: 20px;
     }
 
 .sales-carousel {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
 }
 
+    /* 🔥 THIS is the key fix */
     .sales-carousel img {
         width: 100%;
-        max-width: 250px;
+        max-width: 100%; /* ⬅ removes the cap */
+        height: auto;
+        border-radius: 8px;
     }
 
+/* Buttons */
 .sale-btn {
     background-color: darkblue;
     color: white;
     border: none;
-    padding: 10px;
+    font-size: 22px;
+    padding: 10px 15px;
     margin: 10px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
     .sale-btn:disabled {
@@ -202,17 +215,24 @@ header {
 
 .product-images {
     flex: 1 1 400px;
-    text-align: center;
+    display: flex; /* 👈 THIS FIXES IT */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
+    /* Keep image from pushing buttons away */
     .product-images img {
         width: 100%;
-        max-width: 400px; /* limits desktop image size */
+        max-width: 400px;
         height: auto;
         border-radius: 10px;
-        display: block;
-        margin: 0 auto;
     }
+
+/* Prevent buttons from shrinking */
+.product-btn {
+    flex-shrink: 0;
+}
 
 .product-info {
     flex: 1 1 400px;

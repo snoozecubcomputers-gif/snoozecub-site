@@ -1,3 +1,6 @@
+/* ==========================
+   SALES CAROUSEL
+   ========================== */
 const salesImages = [
     "images/sales/sale1.jpeg",
     "images/sales/sale2.jpeg",
@@ -16,8 +19,13 @@ function showSale() {
 
     img.src = salesImages[currentSale];
 
-    document.querySelector(".prev").disabled = currentSale === 0;
-    document.querySelector(".next").disabled = currentSale === salesImages.length - 1;
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
+
+    if (prevBtn && nextBtn) {
+        prevBtn.disabled = currentSale === 0;
+        nextBtn.disabled = currentSale === salesImages.length - 1;
+    }
 }
 
 function nextSale() {
@@ -34,12 +42,12 @@ function prevSale() {
     }
 }
 
-// PRODUCT IMAGE CAROUSEL
-// PRODUCT IMAGE CAROUSEL (MODULAR)
+/* ==========================
+   PRODUCT IMAGE CAROUSEL
+   ========================== */
 const productContainer = document.querySelector(".product-images");
 
 if (productContainer) {
-
     const images = productContainer.dataset.images.split(",");
     let currentIndex = 0;
 
@@ -50,8 +58,8 @@ if (productContainer) {
     function updateImage() {
         imgElement.src = images[currentIndex].trim();
 
-        prevBtn.disabled = (currentIndex === 0);
-        nextBtn.disabled = (currentIndex === images.length - 1);
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex === images.length - 1;
     }
 
     prevBtn.addEventListener("click", () => {
@@ -71,13 +79,9 @@ if (productContainer) {
     updateImage();
 }
 
+/* ==========================
+   INIT
+   ========================== */
 window.onload = function () {
-    if (document.getElementById("sale-image")) {
-        showSale();
-    }
-
-    if (document.getElementById("product-image")) {
-        showProductImage();
-    }
+    showSale();
 };
-
