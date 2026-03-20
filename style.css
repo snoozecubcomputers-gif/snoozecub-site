@@ -71,9 +71,9 @@ header {
    ========================== */
 .about-container {
     display: flex;
-    flex-direction: column; /* 👈 THIS is the key change */
+    flex-direction: column; /* recent change: stack vertically */
     gap: 90px;
-    align-items: center; /* optional: centers everything */
+    align-items: center;
     margin-top: 40px;
 }
 
@@ -141,7 +141,10 @@ header {
         top: 120px;
     }
 }
-/* SHOP PAGE */
+
+/* ==========================
+   SHOP PAGE
+   ========================== */
 .shop-container {
     max-width: 1100px;
     margin: 40px auto;
@@ -169,28 +172,50 @@ header {
 
     .product-card img {
         width: 100%;
+        max-width: 300px; /* prevents huge thumbnails */
+        height: auto;
         border-radius: 8px;
+        margin: 0 auto;
     }
 
 .view-btn {
     display: inline-block;
     margin-top: 10px;
-    padding: 10px;
+    padding: 10px 15px;
     background: darkblue;
     color: white;
     text-decoration: none;
     border-radius: 5px;
+    font-size: 16px;
 }
 
+/* Individual product layout */
 .product-layout {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
     margin-top: 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+.product-images {
+    flex: 1 1 400px;
+    text-align: center;
+}
+
+    .product-images img {
+        width: 100%;
+        max-width: 400px; /* limits desktop image size */
+        height: auto;
+        border-radius: 10px;
+        display: block;
+        margin: 0 auto;
+    }
 
 .product-info {
+    flex: 1 1 400px;
     max-width: 500px;
 }
 
@@ -201,20 +226,6 @@ header {
     margin-top: 10px;
 }
 
-/* PRODUCT IMAGE CAROUSEL */
-.product-images {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-    .product-images img {
-        width: 100%;
-        max-width: 400px;
-        border-radius: 10px;
-    }
-
 .product-btn {
     background-color: darkblue;
     color: white;
@@ -222,13 +233,12 @@ header {
     padding: 10px;
     cursor: pointer;
     border-radius: 5px;
-
+    font-size: 16px;
 }
 
     .product-btn:disabled {
         background-color: gray;
     }
-
 
 /* ==========================
    Contact Page
@@ -277,28 +287,26 @@ header {
    Order Button Styling
    ========================== */
 .order-btn {
-    display: inline-block; /* keeps padding and size */
-    font-size: 20px; /* <-- increase this for bigger text */
-    font-weight: bold; /* optional, makes it stand out */
-    padding: 12px 25px; /* controls button size */
-    background-color: darkblue; /* button color */
-    color: white; /* text color */
-    text-decoration: none; /* remove underline */
-    border-radius: 6px; /* rounded corners */
-    transition: 0.2s; /* smooth hover effect */
-    margin-top: 20px; /* spacing above button */
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 25px;
+    background-color: darkblue;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.2s;
+    margin-top: 20px;
 }
 
     .order-btn:hover {
-        background-color: #333; /* hover color */
-        color: orangered; /* optional hover text color */
+        background-color: #333;
+        color: orangered;
     }
+
 /* ==========================
-   Order Form Styles (like contact form)
+   Order Form Styles
    ========================== */
-
-
-
 .order-box {
     background-color: white;
     padding: 25px;
@@ -307,7 +315,6 @@ header {
     max-width: 500px;
     margin: 40px auto 60px auto;
     box-sizing: border-box;
-    
 }
 
     .order-box form label {
@@ -344,25 +351,16 @@ header {
             background-color: #333;
         }
 
-        
 .disclaimer {
-    font-size: 24px; /* Adjust text size */
-    color: white; /* Change text color (white here) */
-    background-color: darkblue; /* Optional: dark background for contrast */
-    padding: 15px 20px; /* Space around the text */
-    border-radius: 8px; /* Optional: rounded corners */
-    max-width: 800px; /* Optional: limit width */
-    margin: 20px auto; /* Center horizontally, add vertical space */
-    line-height: 1.6; /* More readable spacing between lines */
-    text-align: center; /* Centered text */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .order-box {
-        width: 90%;
-        padding: 20px;
-    }
+    font-size: 24px;
+    color: white;
+    background-color: darkblue;
+    padding: 15px 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 20px auto;
+    line-height: 1.6;
+    text-align: center;
 }
 
 /* ==========================
@@ -375,6 +373,7 @@ footer {
     padding: 20px;
     margin-top: 40px;
 }
+
 .footer-content {
     max-width: 600px;
     margin: 0 auto;
@@ -404,8 +403,44 @@ footer p {
         align-items: center;
     }
 
-
     .menu ul {
         flex-direction: column;
+    }
+
+    /* Shop adjustments */
+    .product-layout {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .product-images img {
+        max-width: 90%;
+    }
+
+    .product-info {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .view-btn,
+    .product-btn {
+        width: 80%;
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .product-price {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-price {
+        font-size: 24px;
+    }
+
+    .view-btn,
+    .product-btn {
+        font-size: 14px;
     }
 }
