@@ -19,7 +19,8 @@ main {
 header {
     background-color: darkblue;
     color: white;
-    padding: 10px;
+    padding: 20px;
+    font-size: 36px;
 }
 
 .menu ul {
@@ -62,7 +63,7 @@ header {
 .hero-tagline {
     color: white;
     font-size: 36px;
-    margin-top: 10px;
+    margin-top: 100px;
 }
 
 /* ==========================
@@ -70,8 +71,10 @@ header {
    ========================== */
 .about-container {
     display: flex;
-    gap: 40px;
-    align-items: flex-start;
+    flex-direction: column; /* 👈 THIS is the key change */
+    gap: 90px;
+    align-items: center; /* optional: centers everything */
+    margin-top: 40px;
 }
 
 .about-left {
@@ -79,7 +82,8 @@ header {
 }
 
 .about-title {
-    margin-bottom: 10px;
+    margin-bottom: 60px;
+    text-align: center;
 }
 
 .about-text {
@@ -87,6 +91,8 @@ header {
     padding: 20px;
     border-radius: 10px;
     line-height: 1.8;
+    max-width: 700px;
+    width: 100%;
 }
 
 /* ==========================
@@ -135,6 +141,94 @@ header {
         top: 120px;
     }
 }
+/* SHOP PAGE */
+.shop-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.shop-title {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+    .product-card img {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+.view-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px;
+    background: darkblue;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.product-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+
+.product-info {
+    max-width: 500px;
+}
+
+.product-price {
+    font-size: 36px;
+    font-weight: bold;
+    color: darkblue;
+    margin-top: 10px;
+}
+
+/* PRODUCT IMAGE CAROUSEL */
+.product-images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+    .product-images img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 10px;
+    }
+
+.product-btn {
+    background-color: darkblue;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+    .product-btn:disabled {
+        background-color: gray;
+    }
+
 
 /* ==========================
    Contact Page
@@ -142,6 +236,7 @@ header {
 .contact-title {
     text-align: center;
     color: white;
+    font-size: 24px;
 }
 
 .contact-boxes {
@@ -177,6 +272,98 @@ header {
         color: white;
         border: none;
     }
+
+/* ==========================
+   Order Button Styling
+   ========================== */
+.order-btn {
+    display: inline-block; /* keeps padding and size */
+    font-size: 20px; /* <-- increase this for bigger text */
+    font-weight: bold; /* optional, makes it stand out */
+    padding: 12px 25px; /* controls button size */
+    background-color: darkblue; /* button color */
+    color: white; /* text color */
+    text-decoration: none; /* remove underline */
+    border-radius: 6px; /* rounded corners */
+    transition: 0.2s; /* smooth hover effect */
+    margin-top: 20px; /* spacing above button */
+}
+
+    .order-btn:hover {
+        background-color: #333; /* hover color */
+        color: orangered; /* optional hover text color */
+    }
+/* ==========================
+   Order Form Styles (like contact form)
+   ========================== */
+
+
+
+.order-box {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    max-width: 500px;
+    margin: 40px auto 60px auto;
+    box-sizing: border-box;
+    
+}
+
+    .order-box form label {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    .order-box form input,
+    .order-box form textarea,
+    .order-box form select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    .order-box form button {
+        margin-top: 20px;
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+        border-radius: 5px;
+        border: none;
+        background-color: darkblue;
+        color: white;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+        .order-box form button:hover {
+            background-color: #333;
+        }
+
+        
+.disclaimer {
+    font-size: 24px; /* Adjust text size */
+    color: white; /* Change text color (white here) */
+    background-color: darkblue; /* Optional: dark background for contrast */
+    padding: 15px 20px; /* Space around the text */
+    border-radius: 8px; /* Optional: rounded corners */
+    max-width: 800px; /* Optional: limit width */
+    margin: 20px auto; /* Center horizontally, add vertical space */
+    line-height: 1.6; /* More readable spacing between lines */
+    text-align: center; /* Centered text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .order-box {
+        width: 90%;
+        padding: 20px;
+    }
+}
 
 /* ==========================
    Footer

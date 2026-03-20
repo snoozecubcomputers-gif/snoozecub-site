@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order a PC - Snooze Cub Computers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="order-page">
+
+    <header>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="about.html">ℹ️ About Us</a></li>
+                <li><a href="shop.html">🛒 Shop</a></li>
+                <li><a href="contact.html">✉️ Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="contact-title">Order This PC</h1>
+
+        <p class="disclaimer">
+            Orders are for local pickup only. Free delivery within 20 miles of Glens Falls, NY.
+            Payment via cash, PayPal, or CashApp can be arranged after confirming location.
+        </p>
+
+        <div class="contact-box order-box">
+            <form action="https://formspree.io/f/yourformid" method="POST">
+
+                <label for="pc-name">PC Name:</label>
+                <input type="text" id="pc-name" name="pc-name" readonly>
+
+                <label for="buyer-name">Your Name:</label>
+                <input type="text" id="buyer-name" name="name" required>
+
+                <label for="buyer-email">Email:</label>
+                <input type="email" id="buyer-email" name="email" required>
+
+                <label for="buyer-phone">Phone:</label>
+                <input type="tel" id="buyer-phone" name="phone" required>
+
+                <label for="buyer-message">Message / Notes:</label>
+                <textarea id="buyer-message" name="message" rows="6" placeholder="Any notes or questions about pickup/delivery"></textarea>
+
+                <label for="payment-method">Preferred Payment:</label>
+                <select id="payment-method" name="payment-method">
+                    <option value="cash">Cash (local pickup)</option>
+                    <option value="paypal">PayPal (local only)</option>
+                    <option value="cashapp">CashApp (local only)</option>
+                </select>
+
+                <button type="submit">Send Order Request</button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        // Get PC ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const pc = urlParams.get('pc');
+
+        // Map PC IDs to human-readable names
+        const pcNames = {
+            'pc-001': 'Dell Optiplex 3070 Micro',
+            'pc-002': 'Dell Optiplex 3060 Micro',
+            'pc-003': 'Dell Optiplex 3020 SFF',
+            'pc-004': 'HP Prodesk 600 G3 SFF',
+            'pc-005': 'Dell Optiplex 3050 SFF',
+            'pc-006': 'Dell Optiplex 3050 SFF',
+        };
+
+        // Fill the readonly field with the PC name
+        if (pc && pcNames[pc]) {
+            document.getElementById('pc-name').value = pcNames[pc];
+        }
+    </script>
+
+</body>
+</html>

@@ -34,4 +34,50 @@ function prevSale() {
     }
 }
 
-window.onload = showSale;
+// PRODUCT IMAGE CAROUSEL
+// PRODUCT IMAGE CAROUSEL (MODULAR)
+const productContainer = document.querySelector(".product-images");
+
+if (productContainer) {
+
+    const images = productContainer.dataset.images.split(",");
+    let currentIndex = 0;
+
+    const imgElement = productContainer.querySelector("#product-image");
+    const prevBtn = productContainer.querySelector(".prev");
+    const nextBtn = productContainer.querySelector(".next");
+
+    function updateImage() {
+        imgElement.src = images[currentIndex].trim();
+
+        prevBtn.disabled = (currentIndex === 0);
+        nextBtn.disabled = (currentIndex === images.length - 1);
+    }
+
+    prevBtn.addEventListener("click", () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateImage();
+        }
+    });
+
+    nextBtn.addEventListener("click", () => {
+        if (currentIndex < images.length - 1) {
+            currentIndex++;
+            updateImage();
+        }
+    });
+
+    updateImage();
+}
+
+window.onload = function () {
+    if (document.getElementById("sale-image")) {
+        showSale();
+    }
+
+    if (document.getElementById("product-image")) {
+        showProductImage();
+    }
+};
+
